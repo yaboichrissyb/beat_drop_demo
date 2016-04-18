@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   def index
-    @songs = s3=AWS::S3.new(:access_key_id => 'AKIAIUPV622LBWJUBBGA',:secret_access_key => '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').buckets['beatdropmp3'].objects
+    @songs = s3=AWS::S3.new(:access_key_id => '',:secret_access_key => '').buckets['beatdropmp3'].objects
   end
 
 
