@@ -1,6 +1,6 @@
 defaults: &defaults
-  access_key_id: 'AKIAIUPV622LBWJUBBGA'
-  secret_access_key_id: 'C6I2G5IbkpgkyvGfdaRWhV3KFniMge/9poG5ygka'
+  access_key_id: ''
+  secret_access_key_id: ''
 
 development:
   <<: *defaults
@@ -16,6 +16,6 @@ test:
 
 production:
   <<: *defaults
-  access_key_id: <%=ENV['AKIAIUPV622LBWJUBBGA']%>
-  secret_access_key: <%=ENV['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']%>
+  access_key_id: <%=ENV['']%>
+  secret_access_key: <%=ENV['']%>
   bucket: "beatdropmp3"
