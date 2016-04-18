@@ -1,0 +1,24 @@
+<input type="text" name="name" placeholder="Song Name">
+<input type="text" name="artst" placeholder="Artist">
+<%= s3_uploader_form id: "s3_uploader",
+callback_url: songs_url,
+callback_param: "song[direct_upload_url]",
+expiration: 24.hours.from_now.utc.iso8601,
+acl: "public-read-write",
+max_file_size: 10.megabytes do %>
+
+<%= file_field_tag :file, multiple: true %>
+<% end %>
+<div id="uploads_container"></div>
+<script id="template-upload" type="text/x-tmpl">
+<div id="upload_{%=o.unique_id%}" class="upload">
+<h5>{%=o.name%}</h5>
+<div class="progress progress-striped active"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
+<ol>
+  <%@songs.each do |song|%>
+<li><%=/([a-zA-Z]*\s[a-zA-Z]*\s?)/.match(song.key)%></li>
+<%end%>
+</ol>
+

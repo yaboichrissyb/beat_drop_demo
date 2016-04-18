@@ -1,0 +1,21 @@
+defaults: &defaults
+  access_key_id: 'AKIAIUPV622LBWJUBBGA'
+  secret_access_key_id: 'C6I2G5IbkpgkyvGfdaRWhV3KFniMge/9poG5ygka'
+
+development:
+  <<: *defaults
+  bucket: "beatdropmp3"
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *defaults
+  bucket: "beatdropmp3"
+
+
+production:
+  <<: *defaults
+  access_key_id: <%=ENV['AKIAIUPV622LBWJUBBGA']%>
+  secret_access_key: <%=ENV['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']%>
+  bucket: "beatdropmp3"
